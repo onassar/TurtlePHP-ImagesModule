@@ -6,6 +6,7 @@
     /**
      * ImagesController
      * 
+     * @todo    Optimize methods to do validation commonly
      * @extends \Turtle\Controller
      * @final
      */
