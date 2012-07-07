@@ -7,7 +7,7 @@
         require_once 'requirements.inc.php';
 
         // include class, controller
-        require_once APP . '/vendors/TurtlePHP-ImagesModule/ImagesModule.class.php';
+        require_once APP . '/vendors/TurtlePHP-ImagesModule/Images.class.php';
         require_once APP . '/vendors/TurtlePHP-ImagesModule/controllers/Images.class.php';
 
         // config

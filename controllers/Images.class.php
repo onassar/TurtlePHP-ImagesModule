@@ -1,7 +1,7 @@
 <?php
 
-    // namespace
-    namespace ImagesModule;
+    // namespaces
+    namespace Modules\Images;
 
     /**
      * ImagesController
@@ -30,7 +30,7 @@
              */
 
             // grab configuration settings
-            $config = \ImagesModule::getConfig();
+            $config = \Modules\Images::getConfig();
 
             // ensure specified path is valid path
             $full = (APP) . '/webroot' . ($path);
@@ -124,7 +124,7 @@
              */
 
             // grab configuration settings
-            $config = \ImagesModule::getConfig();
+            $config = \Modules\Images::getConfig();
 
             // ensure specified path is valid path
             $full = (APP) . '/webroot' . ($path);
