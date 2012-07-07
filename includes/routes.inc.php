@@ -1,5 +1,9 @@
 <?php
 
+    // grab parent directory
+    $info = pathinfo(__DIR__);
+    $parent = $info['dirname'];
+
     // add module routes to application
     \Turtle\Application::addRoutes(array(
 
@@ -13,7 +17,7 @@
             'module' => true,
             'controller' => '\Modules\Images\Images',
             'action' => 'resize',
-            'view' => APP . '/vendors/TurtlePHP-ImagesModule/views/serve.inc.php'
+            'view' => ($parent) . '/views/serve.inc.php'
         ),
 
         // squaring
@@ -21,6 +25,6 @@
             'module' => true,
             'controller' => '\Modules\Images\Images',
             'action' => 'square',
-            'view' => APP . '/vendors/TurtlePHP-ImagesModule/views/serve.inc.php'
+            'view' => ($parent) . '/views/serve.inc.php'
         )
     ));

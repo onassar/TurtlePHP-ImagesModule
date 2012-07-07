@@ -73,8 +73,7 @@
              *
              */
 
-            // load library; create instance; resize it; free memory
-            require_once APP . '/vendors/PHP-ImageHelper/Image.class.php';
+            // create instance; resize it; free memory
             $image = (new \Image($full));
             $blob = $image->resize($max);
             unset($image);
@@ -167,8 +166,7 @@
              *
              */
 
-            // load library; create instance; square it; free memory
-            require_once APP . '/vendors/PHP-ImageHelper/Image.class.php';
+            // create instance; square it; free memory
             $image = (new \Image($full));
             $blob = $image->square($pixels);
             unset($image);
