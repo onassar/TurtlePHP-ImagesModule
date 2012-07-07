@@ -95,7 +95,7 @@
 
             // create instance; resize it; free memory
             $image = (new \Image($full));
-            $blob = $image->resize($max);
+            $blob = $image->maximum($max);
             unset($image);
 
             /**
@@ -171,7 +171,7 @@
 
             // create instance; resize it; free memory
             $image = (new \Image($full));
-            $blob = $image->resize($max);
+            $blob = $image->minimum($min);
             unset($image);
 
             /**
@@ -182,7 +182,7 @@
             // format name (for storage)
             $info = pathinfo($full);
             $name = $info['filename'];
-            $formatted = ($name) . '.min' . ($max) . '.';
+            $formatted = ($name) . '.min' . ($min) . '.';
             $formatted .= $info['extension'];
 
             // write it to storage
