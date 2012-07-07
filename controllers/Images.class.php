@@ -13,20 +13,6 @@
     final class ImagesController extends \Turtle\Controller
     {
         /**
-         * _config
-         * 
-         * @access protected
-         * @return array
-         */
-        protected function _config()
-        {
-            // configuration settings
-            $config = \Plugin\Config::retrieve();
-            $config = $config['TurtlePHP-ImagesModule'];
-            return $config;
-        }
-
-        /**
          * resize
          * 
          * @access public
@@ -44,7 +30,7 @@
              */
 
             // grab configuration settings
-            $config = $this->_config();
+            $config = \ImagesModule::getConfig();
 
             // ensure specified path is valid path
             $full = (APP) . '/webroot' . ($path);
@@ -138,7 +124,7 @@
              */
 
             // grab configuration settings
-            $config = $this->_config();
+            $config = \ImagesModule::getConfig();
 
             // ensure specified path is valid path
             $full = (APP) . '/webroot' . ($path);
