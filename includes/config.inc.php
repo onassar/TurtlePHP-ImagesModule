@@ -8,10 +8,11 @@
      * 
      */
 
-    // acceptable sizes/dimensions; * wildcards are allowed
+    // acceptable sizes/dimensions; wildcards (*) are allowed
     $sizes = array(
-        'resize' => array('48', '72', '96', '128', '256'),
-        'square' => array('48', '72', '96', '128', '256')
+        'maximum' => array('48', '72', '96', '128', '*'),
+        'minimum' => array('48', '72', '96', '128', '*'),
+        'square' => array('48', '72', '96', '128', '*')
     );
 
     // acceptable mimes; errors out otherwise
