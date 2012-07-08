@@ -59,6 +59,10 @@
          */
         public function fit($width, $height)
         {
+            // the routing-system casts everything as a string; cast as int
+            $width = (int) $width;
+            $height = (int) $height;
+
             // fit-setup
             $path = encode($_GET['path']);
             $full = (APP) . '/webroot' . ($path);
