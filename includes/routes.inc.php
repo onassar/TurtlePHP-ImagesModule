@@ -21,18 +21,18 @@
         ),
 
         // maximum dimensions
-        '^/modules/images/maximum/([0-9]+)/' => array(
+        '^/modules/images/max/([0-9]+)/' => array(
             'module' => true,
             'controller' => '\Modules\Images\Images',
-            'action' => 'maximum',
+            'action' => 'max',
             'view' => ($parent) . '/views/serve.inc.php'
         ),
 
         // minimum dimensions
-        '^/modules/images/minimum/([0-9]+)/' => array(
+        '^/modules/images/min/([0-9]+)/' => array(
             'module' => true,
             'controller' => '\Modules\Images\Images',
-            'action' => 'minimum',
+            'action' => 'min',
             'view' => ($parent) . '/views/serve.inc.php'
         ),
 

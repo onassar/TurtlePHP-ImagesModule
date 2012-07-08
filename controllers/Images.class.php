@@ -95,7 +95,7 @@
             }
 
             /**
-             * Resize (to the maximum)
+             * Resize (to fit)
              *
              */
 
@@ -132,13 +132,13 @@
         }
 
         /**
-         * maximum
+         * max
          * 
          * @access public
          * @param  Integer $max
          * @return void
          */
-        public function maximum($max)
+        public function max($max)
         {
             // square-setup
             $path = encode($_GET['path']);
@@ -159,13 +159,13 @@
              * specified
              */
             if (
-                !in_array($max, $config['sizes']['maximum'])
-                && !in_array('*', $config['sizes']['maximum'])
+                !in_array($max, $config['sizes']['max'])
+                && !in_array('*', $config['sizes']['max'])
             ) {
 
                 // error out
                 throw new \Exception(
-                    'Invalid pixels specified for <maximum> call on path *' .
+                    'Invalid pixels specified for <max> call on path *' .
                     ($full) . '*'
                 );
             }
@@ -177,7 +177,7 @@
 
             // create instance; resize it; free memory
             $image = (new \Image($full));
-            $blob = $image->maximum($max);
+            $blob = $image->max($max);
             unset($image);
 
             /**
@@ -208,13 +208,13 @@
         }
 
         /**
-         * minimum
+         * min
          * 
          * @access public
          * @param  Integer $min
          * @return void
          */
-        public function minimum($min)
+        public function min($min)
         {
             // square-setup
             $path = encode($_GET['path']);
@@ -235,13 +235,13 @@
              * specified
              */
             if (
-                !in_array($min, $config['sizes']['minimum'])
-                && !in_array('*', $config['sizes']['minimum'])
+                !in_array($min, $config['sizes']['min'])
+                && !in_array('*', $config['sizes']['min'])
             ) {
 
                 // error out
                 throw new \Exception(
-                    'Invalid pixels specified for <minimum> call on path *' .
+                    'Invalid pixels specified for <min> call on path *' .
                     ($full) . '*'
                 );
             }
@@ -253,7 +253,7 @@
 
             // create instance; resize it; free memory
             $image = (new \Image($full));
-            $blob = $image->minimum($min);
+            $blob = $image->min($min);
             unset($image);
 
             /**
