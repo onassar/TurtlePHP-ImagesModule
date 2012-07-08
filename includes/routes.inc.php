@@ -12,6 +12,14 @@
          * 
          */
 
+        // fit
+        '^/modules/images/fit/([0-9]+)/([0-9]+)/' => array(
+            'module' => true,
+            'controller' => '\Modules\Images\Images',
+            'action' => 'fit',
+            'view' => ($parent) . '/views/serve.inc.php'
+        ),
+
         // maximum dimensions
         '^/modules/images/maximum/([0-9]+)/' => array(
             'module' => true,

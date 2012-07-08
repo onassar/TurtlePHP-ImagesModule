@@ -50,6 +50,84 @@
         }
 
         /**
+         * fit
+         * 
+         * @access public
+         * @param  Integer $width
+         * @param  Integer $height
+         * @return void
+         */
+        public function fit($width, $height)
+        {
+            // fit-setup
+            $path = encode($_GET['path']);
+            $full = (APP) . '/webroot' . ($path);
+            $dimensions = ($width) . '*' . ($height);
+
+            /**
+             * Ensure the path being accessed is okay to be transformed;
+             * access the mime
+             */
+            $this->_secure($full);
+            $mime = mime_content_type($full);
+
+            // grab configuration settings
+            $config = \Modules\Images::getConfig();
+
+            /**
+             * Ensure the pixels specified is valid, and a wildcard isn't
+             * specified
+             */
+            if (
+                !in_array($dimensions, $config['sizes']['fit'])
+                && !in_array('*', $config['sizes']['fit'])
+            ) {
+
+                // error out
+                throw new \Exception(
+                    'Invalid dimensions specified for call on path *' .
+                    ($full) . '*'
+                );
+            }
+
+            /**
+             * Resize (to the maximum)
+             *
+             */
+
+            // create instance; resize it; free memory
+            $image = (new \Image($full));
+            $blob = $image->fit($width, $height);
+            unset($image);
+
+            /**
+             * Storage
+             *
+             */
+
+            // format name (for storage)
+            $info = pathinfo($full);
+            $name = $info['filename'];
+            $formatted = ($name) . '.fit-' . ($dimensions) . '.';
+            $formatted .= $info['extension'];
+
+            // write it to storage
+            file_put_contents(
+                ($info['dirname']) . '/' . ($formatted),
+                $blob
+            );
+
+            /**
+             * Serve
+             *
+             */
+
+            // set request header
+            header('Content-Type: ' . ($mime));
+            $this->_pass('raw', $blob);
+        }
+
+        /**
          * maximum
          * 
          * @access public
@@ -106,7 +184,7 @@
             // format name (for storage)
             $info = pathinfo($full);
             $name = $info['filename'];
-            $formatted = ($name) . '.max' . ($max) . '.';
+            $formatted = ($name) . '.max-' . ($max) . '.';
             $formatted .= $info['extension'];
 
             // write it to storage
@@ -182,7 +260,7 @@
             // format name (for storage)
             $info = pathinfo($full);
             $name = $info['filename'];
-            $formatted = ($name) . '.min' . ($min) . '.';
+            $formatted = ($name) . '.min-' . ($min) . '.';
             $formatted .= $info['extension'];
 
             // write it to storage
@@ -258,7 +336,7 @@
             // format name (for storage)
             $info = pathinfo($full);
             $name = $info['filename'];
-            $formatted = ($name) . '.sq' . ($pixels) . '.';
+            $formatted = ($name) . '.squ-' . ($pixels) . '.';
             $formatted .= $info['extension'];
 
             // write it to storage
