@@ -13,7 +13,7 @@ More flexible this way, for down the line :)
 
     # images
     RewriteCond %{DOCUMENT_ROOT}/application/webroot%{REQUEST_URI} !-f
-    RewriteRule ^<source>(.+)\.fit-([0-9]+)x([0-9]+)\.([a-zA-Z]{3,4})$ /modules/images/fit/$2/$3/?path=<source>$1\.$4 [R,L]
+    RewriteRule ^*<source>*(.+)\.fit-([0-9]+)x([0-9]+)\.([a-zA-Z]{3,4})$ /modules/images/fit/$2/$3/?path=<source>$1\.$4 [R,L]
     RewriteCond %{DOCUMENT_ROOT}/application/webroot%{REQUEST_URI} !-f
     RewriteRule ^<source>(.+)\.max-([0-9]+)\.([a-zA-Z]{3,4})$ /modules/images/max/$2/?path=<source>$1\.$3 [R,L]
     RewriteCond %{DOCUMENT_ROOT}/application/webroot%{REQUEST_URI} !-f
