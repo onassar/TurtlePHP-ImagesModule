@@ -28,5 +28,17 @@ In order for the above rules to function as you'd expect them to, change `<sourc
 Everything else should just work :)  
 More to come on what these rules do, and the functionality of this module.
 
+### Sample Requests
+
+```
+
+    <img src="/path/to/image.jpg" />
+    <img src="/path/to/image.fit-100x200.jpg" />
+    <img src="/path/to/image.max-150.jpg" />
+    <img src="/path/to/image.min-75.jpg" />
+    <img src="/path/to/image.squ-48.jpg" />
+
+```
+
 ### Tips
 I've only tested this with filenames that I could control. For example, alphanumeric, with no spaces or punctuation. I'm not sure if the rules above work under edge-cases (they should).
