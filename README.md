@@ -30,7 +30,7 @@ More to come on what these rules do, and the functionality of this module.
 
 ### Sample Requests
 
-```
+``` html
 
     <img src="/path/to/image.jpg" />
     <img src="/path/to/image.fit-100x200.jpg" />
