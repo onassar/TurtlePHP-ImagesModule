@@ -13,6 +13,25 @@
     final class ImagesController extends \Turtle\Controller
     {
         /**
+         * _encode
+         * 
+         * @access protected
+         * @static
+         * @param  mixed $mixed
+         * @return array
+         */
+        protected static function _encode($mixed)
+        {
+            if (is_array($mixed)) {
+                foreach ($mixed as $key => $value) {
+                    $mixed[$key] = self::_encode($value);
+                }
+                return $mixed;
+            }
+            return htmlentities($mixed, ENT_QUOTES, 'UTF-8');
+        }
+
+        /**
          * _secure
          * 
          * @access protected
@@ -64,7 +83,7 @@
             $height = (int) $height;
 
             // fit-setup
-            $path = encode($_GET['path']);
+            $path = $this->_encode($_GET['path']);
             $full = (APP) . '/webroot' . ($path);
             $dimensions = ($width) . '*' . ($height);
 
@@ -141,7 +160,7 @@
         public function max($max)
         {
             // square-setup
-            $path = encode($_GET['path']);
+            $path = $this->_encode($_GET['path']);
             $full = (APP) . '/webroot' . ($path);
 
             /**
@@ -217,7 +236,7 @@
         public function min($min)
         {
             // square-setup
-            $path = encode($_GET['path']);
+            $path = $this->_encode($_GET['path']);
             $full = (APP) . '/webroot' . ($path);
 
             /**
@@ -293,7 +312,7 @@
         public function square($pixels)
         {
             // square-setup
-            $path = encode($_GET['path']);
+            $path = $this->_encode($_GET['path']);
             $full = (APP) . '/webroot' . ($path);
 
             /**
