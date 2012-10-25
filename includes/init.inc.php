@@ -12,8 +12,8 @@
         require_once ($parent) . '/controllers/Images.class.php';
 
         // flow includes
-        require_once 'config.inc.php';
         require_once 'requirements.inc.php';
+        require_once 'config.inc.php';
         require_once 'routes.inc.php';
     };
 
