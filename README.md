@@ -37,7 +37,6 @@ More to come on what these rules do, and the functionality of this module.
     <img src="/path/to/image.max-150.jpg" />
     <img src="/path/to/image.min-75.jpg" />
     <img src="/path/to/image.squ-48.jpg" />
-
 ```
 
 ### Tips
