@@ -69,6 +69,25 @@
         }
 
         /**
+         * _writable
+         * 
+         * @access protected
+         * @param  String $path
+         * @return void
+         */
+        protected function _writable($path)
+        {
+            // ensure webroot is writable
+            if (!is_writable($path)) {
+
+                // ensure writable to create upload directory
+                throw new \Exception(
+                    '*' . ($path) . '/* must be writable.'
+                );
+            }
+        }
+
+        /**
          * fit
          * 
          * @access public
@@ -105,11 +124,10 @@
                 !in_array($dimensions, $config['sizes']['fit'])
                 && !in_array('*', $config['sizes']['fit'])
             ) {
-
                 // error out
                 throw new \Exception(
                     'Invalid dimensions specified for call on path *' .
-                    ($full) . '*'
+                    ($full) . '*. See module config file.'
                 );
             }
 
@@ -133,6 +151,9 @@
             $name = $info['filename'];
             $formatted = ($name) . '.fit-' . ($dimensions) . '.';
             $formatted .= $info['extension'];
+
+            // ensure writable
+            $this->_writable($info['dirname'] . '/');
 
             // write it to storage
             file_put_contents(
@@ -181,11 +202,10 @@
                 !in_array($max, $config['sizes']['max'])
                 && !in_array('*', $config['sizes']['max'])
             ) {
-
                 // error out
                 throw new \Exception(
                     'Invalid pixels specified for <max> call on path *' .
-                    ($full) . '*'
+                    ($full) . '*. See module config file.'
                 );
             }
 
@@ -209,6 +229,9 @@
             $name = $info['filename'];
             $formatted = ($name) . '.max-' . ($max) . '.';
             $formatted .= $info['extension'];
+
+            // ensure writable
+            $this->_writable($info['dirname'] . '/');
 
             // write it to storage
             file_put_contents(
@@ -257,11 +280,10 @@
                 !in_array($min, $config['sizes']['min'])
                 && !in_array('*', $config['sizes']['min'])
             ) {
-
                 // error out
                 throw new \Exception(
                     'Invalid pixels specified for <min> call on path *' .
-                    ($full) . '*'
+                    ($full) . '*. See module config file.'
                 );
             }
 
@@ -285,6 +307,9 @@
             $name = $info['filename'];
             $formatted = ($name) . '.min-' . ($min) . '.';
             $formatted .= $info['extension'];
+
+            // ensure writable
+            $this->_writable($info['dirname'] . '/');
 
             // write it to storage
             file_put_contents(
@@ -333,11 +358,10 @@
                 !in_array($pixels, $config['sizes']['square'])
                 && !in_array('*', $config['sizes']['square'])
             ) {
-
                 // error out
                 throw new \Exception(
                     'Invalid pixels specified for <square> call on path *' .
-                    ($full) . '*'
+                    ($full) . '*. See module config file.'
                 );
             }
 
@@ -361,6 +385,9 @@
             $name = $info['filename'];
             $formatted = ($name) . '.squ-' . ($pixels) . '.';
             $formatted .= $info['extension'];
+
+            // ensure writable
+            $this->_writable($info['dirname'] . '/');
 
             // write it to storage
             file_put_contents(
