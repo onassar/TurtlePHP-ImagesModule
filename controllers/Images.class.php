@@ -93,9 +93,10 @@
          * @access public
          * @param  Integer $width
          * @param  Integer $height
+         * @param  mixed $effect (default: null)
          * @return void
          */
-        public function fit($width, $height)
+        public function fit($width, $height, $effect = null)
         {
             // the routing-system casts everything as a string; cast as int
             $width = (int) $width;
@@ -104,7 +105,7 @@
             // fit-setup
             $path = $this->_encode($_GET['path']);
             $full = (APP) . '/webroot' . ($path);
-            $dimensions = ($width) . '*' . ($height);
+            $dimensions = ($width) . 'x' . ($height);
 
             /**
              * Ensure the path being accessed is okay to be transformed;
@@ -176,9 +177,10 @@
          * 
          * @access public
          * @param  Integer $max
+         * @param  mixed $effect (default: null)
          * @return void
          */
-        public function max($max)
+        public function max($max, $effect = null)
         {
             // square-setup
             $path = $this->_encode($_GET['path']);
@@ -254,9 +256,10 @@
          * 
          * @access public
          * @param  Integer $min
+         * @param  mixed $effect (default: null)
          * @return void
          */
-        public function min($min)
+        public function min($min, $effect = null)
         {
             // square-setup
             $path = $this->_encode($_GET['path']);
@@ -332,9 +335,10 @@
          * 
          * @access public
          * @param  Integer $pixels
+         * @param  mixed $effect (default: null)
          * @return void
          */
-        public function square($pixels)
+        public function square($pixels, $effect = null)
         {
             // square-setup
             $path = $this->_encode($_GET['path']);
