@@ -95,7 +95,7 @@
 
                 // ensure writable to create upload directory
                 throw new \Exception(
-                    '*' . ($path) . '/* must be writable.'
+                    '*' . ($path) . '* must be writable.'
                 );
             }
         }
