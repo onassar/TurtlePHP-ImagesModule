@@ -13,6 +13,17 @@
     final class ImagesController extends \Turtle\Controller
     {
         /**
+         * _effects
+         *
+         * @var    array
+         * @access protected
+         * @static
+         */
+        protected $_effects = array(
+            'bw'
+        );
+
+        /**
          * _encode
          * 
          * @access protected
@@ -93,19 +104,26 @@
          * @access public
          * @param  Integer $width
          * @param  Integer $height
-         * @param  mixed $effect (default: null)
          * @return void
          */
-        public function fit($width, $height, $effect = null)
+        public function fit($width, $height)
         {
             // the routing-system casts everything as a string; cast as int
             $width = (int) $width;
             $height = (int) $height;
+            $dimensions = ($width) . 'x' . ($height);
 
-            // fit-setup
+            // path and effect setup
             $path = $this->_encode($_GET['path']);
             $full = (APP) . '/webroot' . ($path);
-            $dimensions = ($width) . 'x' . ($height);
+            $effect = $this->_encode($_GET['effect']);
+
+            // ensure valid effect
+            if (!empty($effect)) {
+                if (in_array($effect, $this->_effects) === false) {
+                    throw new \Exception('Invalid effect *' . ($effect) . '*');
+                }
+            }
 
             /**
              * Ensure the path being accessed is okay to be transformed;
@@ -151,6 +169,9 @@
             $info = pathinfo($full);
             $name = $info['filename'];
             $formatted = ($name) . '.fit-' . ($dimensions) . '.';
+            if (!empty($effect)) {
+                $formatted .= ($effect) . '.';
+            }
             $formatted .= $info['extension'];
 
             // ensure writable
@@ -177,14 +198,21 @@
          * 
          * @access public
          * @param  Integer $max
-         * @param  mixed $effect (default: null)
          * @return void
          */
-        public function max($max, $effect = null)
+        public function max($max)
         {
-            // square-setup
+            // path and effect setup
             $path = $this->_encode($_GET['path']);
             $full = (APP) . '/webroot' . ($path);
+            $effect = $this->_encode($_GET['effect']);
+
+            // ensure valid effect
+            if (!empty($effect)) {
+                if (in_array($effect, $this->_effects) === false) {
+                    throw new \Exception('Invalid effect *' . ($effect) . '*');
+                }
+            }
 
             /**
              * Ensure the path being accessed is okay to be transformed;
@@ -230,6 +258,9 @@
             $info = pathinfo($full);
             $name = $info['filename'];
             $formatted = ($name) . '.max-' . ($max) . '.';
+            if (!empty($effect)) {
+                $formatted .= ($effect) . '.';
+            }
             $formatted .= $info['extension'];
 
             // ensure writable
@@ -256,14 +287,21 @@
          * 
          * @access public
          * @param  Integer $min
-         * @param  mixed $effect (default: null)
          * @return void
          */
-        public function min($min, $effect = null)
+        public function min($min)
         {
-            // square-setup
+            // path and effect setup
             $path = $this->_encode($_GET['path']);
             $full = (APP) . '/webroot' . ($path);
+            $effect = $this->_encode($_GET['effect']);
+
+            // ensure valid effect
+            if (!empty($effect)) {
+                if (in_array($effect, $this->_effects) === false) {
+                    throw new \Exception('Invalid effect *' . ($effect) . '*');
+                }
+            }
 
             /**
              * Ensure the path being accessed is okay to be transformed;
@@ -309,6 +347,9 @@
             $info = pathinfo($full);
             $name = $info['filename'];
             $formatted = ($name) . '.min-' . ($min) . '.';
+            if (!empty($effect)) {
+                $formatted .= ($effect) . '.';
+            }
             $formatted .= $info['extension'];
 
             // ensure writable
@@ -335,14 +376,21 @@
          * 
          * @access public
          * @param  Integer $pixels
-         * @param  mixed $effect (default: null)
          * @return void
          */
-        public function square($pixels, $effect = null)
+        public function square($pixels)
         {
-            // square-setup
+            // path and effect setup
             $path = $this->_encode($_GET['path']);
             $full = (APP) . '/webroot' . ($path);
+            $effect = $this->_encode($_GET['effect']);
+
+            // ensure valid effect
+            if (!empty($effect)) {
+                if (in_array($effect, $this->_effects) === false) {
+                    throw new \Exception('Invalid effect *' . ($effect) . '*');
+                }
+            }
 
             /**
              * Ensure the path being accessed is okay to be transformed;
@@ -388,6 +436,9 @@
             $info = pathinfo($full);
             $name = $info['filename'];
             $formatted = ($name) . '.squ-' . ($pixels) . '.';
+            if (!empty($effect)) {
+                $formatted .= ($effect) . '.';
+            }
             $formatted .= $info['extension'];
 
             // ensure writable
