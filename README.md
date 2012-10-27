@@ -12,13 +12,13 @@ More flexible this way, for down the line :)
 ```
 # images
 RewriteCond %{DOCUMENT_ROOT}/application/webroot%{REQUEST_URI} !-f
-RewriteRule ^/static/img/focus(.+)\.fit-([0-9]+)x([0-9]+)\.?([^.]+|)\.([a-zA-Z]{3,4})$ /modules/images/fit/$2/$3/?path=/static/img/focus$1\.$5&effect=$4 [R,L]
+RewriteRule ^<source>(.+)\.fit-([0-9]+)x([0-9]+)\.?([^.]+|)\.([a-zA-Z]{3,4})$ /modules/images/fit/$2/$3/?path=<source>$1\.$5&effect=$4 [R,L]
 RewriteCond %{DOCUMENT_ROOT}/application/webroot%{REQUEST_URI} !-f
-RewriteRule ^/static/img/focus(.+)\.max-([0-9]+)\.?([^.]+|)\.([a-zA-Z]{3,4})$ /modules/images/max/$2/?path=/static/img/focus$1\.$4&effect=$3 [R,L]
+RewriteRule ^<source>(.+)\.max-([0-9]+)\.?([^.]+|)\.([a-zA-Z]{3,4})$ /modules/images/max/$2/?path=<source>$1\.$4&effect=$3 [R,L]
 RewriteCond %{DOCUMENT_ROOT}/application/webroot%{REQUEST_URI} !-f
-RewriteRule ^/static/img/focus(.+)\.min-([0-9]+)\.?([^.]+|)\.([a-zA-Z]{3,4})$ /modules/images/min/$2/?path=/static/img/focus$1\.$4&effect=$3 [R,L]
+RewriteRule ^<source>(.+)\.min-([0-9]+)\.?([^.]+|)\.([a-zA-Z]{3,4})$ /modules/images/min/$2/?path=<source>$1\.$4&effect=$3 [R,L]
 RewriteCond %{DOCUMENT_ROOT}/application/webroot%{REQUEST_URI} !-f
-RewriteRule ^/static/img/focus(.+)\.squ-([0-9]+)\.?([^.]+|)\.([a-zA-Z]{3,4})$ /modules/images/square/$2/?path=/static/img/focus$1\.$4&effect=$3 [R,L]
+RewriteRule ^<source>(.+)\.squ-([0-9]+)\.?([^.]+|)\.([a-zA-Z]{3,4})$ /modules/images/square/$2/?path=<source>$1\.$4&effect=$3 [R,L]
 ```
 
 In order for the above rules to function as you'd expect them to, change `<source>` to a path resembling `/content/uploads`.
