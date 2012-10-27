@@ -20,7 +20,8 @@
          * @static
          */
         protected $_effects = array(
-            'bw'
+            'lomo',
+            'gotham'
         );
 
         /**
@@ -184,6 +185,26 @@
             );
 
             /**
+             * Effect
+             * 
+             */
+            if (!empty($effect)) {
+
+                // set the effect
+                $image = (new \ImageEffects\Image(
+                    ($info['dirname']) . '/' . ($formatted))
+                );
+                $blob = $image->$effect();
+                unset($image);
+
+                // write it to storage again
+                file_put_contents(
+                    ($info['dirname']) . '/' . ($formatted),
+                    $blob
+                );
+            }
+
+            /**
              * Serve
              *
              */
@@ -271,6 +292,26 @@
                 ($info['dirname']) . '/' . ($formatted),
                 $blob
             );
+
+            /**
+             * Effect
+             * 
+             */
+            if (!empty($effect)) {
+
+                // set the effect
+                $image = (new \ImageEffects\Image(
+                    ($info['dirname']) . '/' . ($formatted))
+                );
+                $blob = $image->$effect();
+                unset($image);
+
+                // write it to storage again
+                file_put_contents(
+                    ($info['dirname']) . '/' . ($formatted),
+                    $blob
+                );
+            }
 
             /**
              * Serve
@@ -362,6 +403,26 @@
             );
 
             /**
+             * Effect
+             * 
+             */
+            if (!empty($effect)) {
+
+                // set the effect
+                $image = (new \ImageEffects\Image(
+                    ($info['dirname']) . '/' . ($formatted))
+                );
+                $blob = $image->$effect();
+                unset($image);
+
+                // write it to storage again
+                file_put_contents(
+                    ($info['dirname']) . '/' . ($formatted),
+                    $blob
+                );
+            }
+
+            /**
              * Serve
              *
              */
@@ -449,6 +510,26 @@
                 ($info['dirname']) . '/' . ($formatted),
                 $blob
             );
+
+            /**
+             * Effect
+             * 
+             */
+            if (!empty($effect)) {
+
+                // set the effect
+                $image = (new \ImageEffects\Image(
+                    ($info['dirname']) . '/' . ($formatted))
+                );
+                $blob = $image->$effect();
+                unset($image);
+
+                // write it to storage again
+                file_put_contents(
+                    ($info['dirname']) . '/' . ($formatted),
+                    $blob
+                );
+            }
 
             /**
              * Serve

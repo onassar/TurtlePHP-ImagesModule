@@ -8,6 +8,7 @@
     // required classes
     $required = array(
         'Image' => 'PHP-ImageHelper',
+        'ImageEffects\Image' => 'PHP-ImageEffects',
         '\Plugin\Config' => 'TurtlePHP-ConfigPlugin'
     );
 
