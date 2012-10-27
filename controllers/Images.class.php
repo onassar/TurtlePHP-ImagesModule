@@ -20,8 +20,9 @@
          * @static
          */
         protected $_effects = array(
-            'lomo',
-            'gotham'
+            'bw',
+            'gotham',
+            'lomo'
         );
 
         /**
