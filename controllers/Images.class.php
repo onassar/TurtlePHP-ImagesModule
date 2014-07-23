@@ -85,7 +85,7 @@
          * _writable
          * 
          * @access protected
-         * @param  String $path
+         * @param  string $path
          * @return void
          */
         protected function _writable($path)
@@ -101,14 +101,14 @@
         }
 
         /**
-         * fit
+         * actionFit
          * 
          * @access public
-         * @param  Integer $width
-         * @param  Integer $height
+         * @param  iwnteger $width
+         * @param  integer $height
          * @return void
          */
-        public function fit($width, $height)
+        public function actionFit($width, $height)
         {
             // the routing-system casts everything as a string; cast as int
             $width = (int) $width;
@@ -216,13 +216,13 @@
         }
 
         /**
-         * max
+         * actionMax
          * 
          * @access public
-         * @param  Integer $max
+         * @param  integer $max
          * @return void
          */
-        public function max($max)
+        public function actionMax($max)
         {
             // path and effect setup
             $path = $this->_encode($_GET['path']);
@@ -325,13 +325,13 @@
         }
 
         /**
-         * min
+         * actionMin
          * 
          * @access public
-         * @param  Integer $min
+         * @param  integer $min
          * @return void
          */
-        public function min($min)
+        public function actionMin($min)
         {
             // path and effect setup
             $path = $this->_encode($_GET['path']);
@@ -434,13 +434,13 @@
         }
 
         /**
-         * square
+         * actionSquare
          * 
          * @access public
-         * @param  Integer $pixels
+         * @param  integer $pixels
          * @return void
          */
-        public function square($pixels)
+        public function actionSquare($pixels)
         {
             // path and effect setup
             $path = $this->_encode($_GET['path']);
