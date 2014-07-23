@@ -52,6 +52,8 @@ cd ~/Sites/domain.com
 git submodule add git@github.com:onassar/TurtlePHP-ConfigPlugin.git TurtlePHP/application/plugins/TurtlePHP-ConfigPlugin
 git submodule add git@github.com:onassar/PHP-ImageHelper.git TurtlePHP/application/vendors/PHP-ImageHelper
 git submodule add git@github.com:onassar/PHP-ImageEffects.git TurtlePHP/application/vendors/PHP-ImageEffects
+git clone git@github.com:onassar/TurtlePHP-ImagesModule.git TurtlePHP/modules/TurtlePHP-ImagesModule
+rm -rf TurtlePHP/modules/TurtlePHP-ImagesModule/.git
 ```
 
 ``` php
