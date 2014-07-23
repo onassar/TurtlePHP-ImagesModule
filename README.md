@@ -45,7 +45,14 @@ More to come on what these rules do, and the functionality of this module.
 ### Tips
 I've only tested this with filenames that I could control. For example, alphanumeric, with no spaces or punctuation. I'm not sure if the rules above work under edge-cases (they should).
 
-### Sample calls from init.init.php
+### Install and init flows
+
+```
+cd ~/Sites/domain.com
+git submodule add git@github.com:onassar/TurtlePHP-ConfigPlugin.git TurtlePHP/application/plugins/TurtlePHP-ConfigPlugin
+git submodule add git@github.com:onassar/PHP-ImageHelper.git TurtlePHP/application/vendors/PHP-ImageHelper
+git submodule add git@github.com:onassar/PHP-ImageEffects.git TurtlePHP/application/vendors/PHP-ImageEffects
+```
 
 ``` php
 require_once APP . '/plugins/TurtlePHP-ConfigPlugin/Config.class.php';
