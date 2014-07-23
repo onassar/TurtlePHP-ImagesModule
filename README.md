@@ -47,8 +47,9 @@ I've only tested this with filenames that I could control. For example, alphanum
 
 ### Sample calls from init.init.php
 
-    require_once APP . '/plugins/TurtlePHP-ConfigPlugin/Config.class.php';
-    require_once APP . '/vendors/PHP-ImageHelper/Image.class.php';
-    require_once APP . '/vendors/PHP-ImagesEffects/Image.class.php';
-    require_once APP . '/modules/TurtlePHP-ImagesModule/includes/init.inc.php';
-
+``` php
+require_once APP . '/plugins/TurtlePHP-ConfigPlugin/Config.class.php';
+require_once APP . '/vendors/PHP-ImageHelper/Image.class.php';
+require_once APP . '/vendors/PHP-ImagesEffects/Image.class.php';
+require_once APP . '/modules/TurtlePHP-ImagesModule/includes/init.inc.php';
+```
