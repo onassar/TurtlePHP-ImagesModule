@@ -44,3 +44,11 @@ More to come on what these rules do, and the functionality of this module.
 
 ### Tips
 I've only tested this with filenames that I could control. For example, alphanumeric, with no spaces or punctuation. I'm not sure if the rules above work under edge-cases (they should).
+
+### Sample calls from init.init.php
+
+    require_once APP . '/plugins/TurtlePHP-ConfigPlugin/Config.class.php';
+    require_once APP . '/vendors/PHP-ImageHelper/Image.class.php';
+    require_once APP . '/vendors/PHP-ImagesEffects/Image.class.php';
+    require_once APP . '/modules/TurtlePHP-ImagesModule/includes/init.inc.php';
+
