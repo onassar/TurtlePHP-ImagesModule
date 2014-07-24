@@ -211,7 +211,7 @@
 
             // set request header
             header('Content-Type: ' . ($mime));
-            $this->_pass('raw', $blob);
+            $this->_pass('response', $blob);
         }
 
         /**
@@ -320,7 +320,7 @@
 
             // set request header
             header('Content-Type: ' . ($mime));
-            $this->_pass('raw', $blob);
+            $this->_pass('response', $blob);
         }
 
         /**
@@ -429,7 +429,7 @@
 
             // set request header
             header('Content-Type: ' . ($mime));
-            $this->_pass('raw', $blob);
+            $this->_pass('response', $blob);
         }
 
         /**
@@ -538,6 +538,6 @@
 
             // set request header
             header('Content-Type: ' . ($mime));
-            $this->_pass('raw', $blob);
+            $this->_pass('response', $blob);
         }
     }

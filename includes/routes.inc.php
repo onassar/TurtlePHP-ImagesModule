@@ -17,7 +17,7 @@
             'module' => true,
             'controller' => '\Modules\Images\Images',
             'action' => 'actionFit',
-            'view' => ($parent) . '/views/serve.inc.php'
+            'view' => ($parent) . '/views/raw.inc.php'
         ),
 
         // maximum dimensions
@@ -25,7 +25,7 @@
             'module' => true,
             'controller' => '\Modules\Images\Images',
             'action' => 'actionMax',
-            'view' => ($parent) . '/views/serve.inc.php'
+            'view' => ($parent) . '/views/raw.inc.php'
         ),
 
         // minimum dimensions
@@ -33,7 +33,7 @@
             'module' => true,
             'controller' => '\Modules\Images\Images',
             'action' => 'actionMin',
-            'view' => ($parent) . '/views/serve.inc.php'
+            'view' => ($parent) . '/views/raw.inc.php'
         ),
 
         // squaring
@@ -41,6 +41,6 @@
             'module' => true,
             'controller' => '\Modules\Images\Images',
             'action' => 'actionSquare',
-            'view' => ($parent) . '/views/serve.inc.php'
+            'view' => ($parent) . '/views/raw.inc.php'
         )
     ));
