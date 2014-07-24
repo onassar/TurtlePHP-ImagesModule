@@ -62,6 +62,6 @@ chmod 0777 TurtlePHP/application/webroot/modules/images
 ``` php
 require_once APP . '/plugins/TurtlePHP-ConfigPlugin/Config.class.php';
 require_once APP . '/vendors/PHP-ImageHelper/Image.class.php';
-require_once APP . '/vendors/PHP-ImagesEffects/Image.class.php';
+require_once APP . '/vendors/PHP-ImageEffects/Image.class.php';
 require_once APP . '/modules/TurtlePHP-ImagesModule/includes/init.inc.php';
 ```
