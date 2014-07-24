@@ -16,7 +16,7 @@
         '^/modules/images/fit/([0-9]+)/([0-9]+)/' => array(
             'module' => true,
             'controller' => '\Modules\Images\Images',
-            'action' => 'fit',
+            'action' => 'actionFit',
             'view' => ($parent) . '/views/serve.inc.php'
         ),
 
@@ -24,7 +24,7 @@
         '^/modules/images/max/([0-9]+)/' => array(
             'module' => true,
             'controller' => '\Modules\Images\Images',
-            'action' => 'max',
+            'action' => 'actionMax',
             'view' => ($parent) . '/views/serve.inc.php'
         ),
 
@@ -32,7 +32,7 @@
         '^/modules/images/min/([0-9]+)/' => array(
             'module' => true,
             'controller' => '\Modules\Images\Images',
-            'action' => 'min',
+            'action' => 'actionMin',
             'view' => ($parent) . '/views/serve.inc.php'
         ),
 
@@ -40,7 +40,7 @@
         '^/modules/images/square/([0-9]+)/' => array(
             'module' => true,
             'controller' => '\Modules\Images\Images',
-            'action' => 'square',
+            'action' => 'actionSquare',
             'view' => ($parent) . '/views/serve.inc.php'
         )
     ));
