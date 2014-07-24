@@ -29,11 +29,10 @@
          * _encode
          * 
          * @access protected
-         * @static
          * @param  mixed $mixed
          * @return array
          */
-        protected static function _encode($mixed)
+        protected function _encode($mixed)
         {
             if (is_array($mixed)) {
                 foreach ($mixed as $key => $value) {
@@ -48,10 +47,10 @@
          * _secure
          * 
          * @access protected
-         * @param  String $full
+         * @param  string $fullPath
          * @return void
          */
-        protected function _secure($full)
+        protected function _secure($fullPath)
         {
             /**
              * Validation
@@ -62,21 +61,21 @@
             $config = \Modules\Images::getConfig();
 
             // ensure specified path is valid path
-            if (!is_file($full)) {
+            if (!is_file($fullPath)) {
 
                 // error out
                 throw new \Exception(
-                    'Path *' . ($full) . '* is not a valid resource.'
+                    'Path *' . ($fullPath) . '* is not a valid resource.'
                 );
             }
 
             // ensure specified path is valid type
-            $mime = mime_content_type($full);
+            $mime = mime_content_type($fullPath);
             if (!in_array($mime, $config['mimes'])) {
 
                 // error out
                 throw new \Exception(
-                    'Path *' . ($full) . '* is an unsupported mime type.'
+                    'Path *' . ($fullPath) . '* is an unsupported mime type.'
                 );
             }
         }
@@ -104,7 +103,7 @@
          * actionFit
          * 
          * @access public
-         * @param  iwnteger $width
+         * @param  integer $width
          * @param  integer $height
          * @return void
          */

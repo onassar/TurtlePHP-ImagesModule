@@ -2,11 +2,7 @@
 
     // configuration init
     $sizes = array();
-
-    /**
-     * Features
-     * 
-     */
+    $mimes = array();
 
     // acceptable sizes/dimensions; wildcards (*) are allowed
     $sizes = array(
