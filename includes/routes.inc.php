@@ -1,8 +1,7 @@
 <?php
 
-    // grab parent directory
-    $info = pathinfo(__DIR__);
-    $parent = $info['dirname'];
+    // namespaces
+    namespace Modules\Images;
 
     // add module routes to application
     \Turtle\Application::addRoutes(array(
@@ -17,7 +16,7 @@
             'module' => true,
             'controller' => '\Modules\Images\Images',
             'action' => 'actionFit',
-            'view' => ($parent) . '/views/raw.inc.php'
+            'view' => MODULE . '/views/raw.inc.php'
         ),
 
         // maximum dimensions
@@ -25,7 +24,7 @@
             'module' => true,
             'controller' => '\Modules\Images\Images',
             'action' => 'actionMax',
-            'view' => ($parent) . '/views/raw.inc.php'
+            'view' => MODULE . '/views/raw.inc.php'
         ),
 
         // minimum dimensions
@@ -33,7 +32,7 @@
             'module' => true,
             'controller' => '\Modules\Images\Images',
             'action' => 'actionMin',
-            'view' => ($parent) . '/views/raw.inc.php'
+            'view' => MODULE . '/views/raw.inc.php'
         ),
 
         // squaring
@@ -41,6 +40,6 @@
             'module' => true,
             'controller' => '\Modules\Images\Images',
             'action' => 'actionSquare',
-            'view' => ($parent) . '/views/raw.inc.php'
+            'view' => MODULE . '/views/raw.inc.php'
         )
     ));

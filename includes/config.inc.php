@@ -1,5 +1,8 @@
 <?php
 
+    // namespaces
+    namespace Modules\Images;
+
     // configuration init
     $sizes = array();
     $mimes = array();

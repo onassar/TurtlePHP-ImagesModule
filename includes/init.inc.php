@@ -1,5 +1,8 @@
 <?php
 
+    // namespaces
+    namespace Modules\Images;
+
     // closure (variable scope preservation)
     $closure = function() {
 
@@ -7,9 +10,12 @@
         $info = pathinfo(__DIR__);
         $parent = $info['dirname'];
 
+        // module path
+        DEFINE(__NAMESPACE__ . '\MODULE', $parent);
+
         // include class, controller
-        require_once ($parent) . '/Images.class.php';
-        require_once ($parent) . '/controllers/Images.class.php';
+        require_once MODULE . '/Images.class.php';
+        require_once MODULE . '/controllers/Images.class.php';
 
         // flow includes
         require_once 'requirements.inc.php';
